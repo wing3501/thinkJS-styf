@@ -7,8 +7,11 @@ export default class extends Base {
    * index action
    * @return {Promise} []
    */
-  indexAction(){
+  * indexAction(){
+      let model = this.model("user");
+      let data = yield model.where({name: "18312051179"}).find();
     //auto render template file index_index.html
-    return this.display();
+    // return this.display();
+      this.success(data);
   }
 }
